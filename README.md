@@ -1,4 +1,4 @@
-**# Time, Tide & JavaScript Waits for None ⏳**
+# Time, Tide & JavaScript Waits for None ⏳
 ## JavaScript Execution Context 🌐
 
 1. **Everything in JavaScript happens inside an `Execution Context`**.
@@ -18,3 +18,7 @@
     - JavaScript starts by creating a `Global Execution Context` for your entire script.
     - Every time a function is called, a new `Execution Context` is created for that function and added to the call stack.
     - Example: It's like going through a series of tasks, where you start a new task (function) only after finishing the current one unless it requires waiting, like making tea ☕.
+
+_In this repository, you'll find the notes I've created while learning from the **Namaste JavaScript** playlist._
+
+<font color="red"><i>Remaining notes will be uploaded every day.</i></font>
