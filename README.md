@@ -19,6 +19,6 @@
     - Every time a function is called, a new `Execution Context` is created for that function and added to the call stack.
     - Example: It's like going through a series of tasks, where you start a new task (function) only after finishing the current one unless it requires waiting, like making tea ☕.
 
-_In this repository, you'll find the notes I've created while learning from the **Namaste JavaScript** playlist._
 
-<font color="red"><i>Remaining notes will be uploaded every day.</i></font>
+#
+➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
