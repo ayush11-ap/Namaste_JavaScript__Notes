@@ -48,6 +48,24 @@
     - Runtime Stack
     - Machine Stack
 
+## 3. Hoisting in JavaScript 🎣
+
+1. **What is Hoisting?** 🚀
+    - Hoisting is a JavaScript phenomenon that allows you to access variables and functions even before they are initialized or assigned a value.
+    - Example: It's like being able to use a tool in your workshop before officially setting it up—JavaScript knows it exists even if you haven't fully defined it yet.
+
+2. **How Does Hoisting Work?** 🛠️
+    - The JavaScript interpreter executes the code in two phases:
+      1. **Memory Creation Phase**: 
+          - In this phase, variables are assigned `undefined`, and functions are stored in memory as they are.
+      2. **Code Execution Phase**:
+          - In this phase, the actual code is executed. Variables will still hold `undefined` if they haven't been assigned a value yet, but functions can be invoked as they were stored in full during the Memory Creation phase.
+    - Example: Imagine setting up a workspace where all your tools are placed on the table, but their labels (variable values) haven't been written yet. You can still grab the tool (function) and use it because it’s already there, but you don’t know exactly what some tools (variables) are until later.
+
+3. **Refer**:
+    - To understand this concept in more detail, refer to the folder named `3.Hoisting`.
+
+
 
 #
 ➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
