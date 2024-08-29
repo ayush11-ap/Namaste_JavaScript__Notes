@@ -48,6 +48,7 @@
     - Runtime Stack
     - Machine Stack
 
+
 ## 3. Hoisting in JavaScript 🎣
 
 1. **What is Hoisting?** 🚀
@@ -65,6 +66,25 @@
 3. **Refer**:
     - To understand this concept in more detail, refer to the folder named `3.Hoisting`.
 
+
+## 4. Functions and Execution Context Cleanup 🧹
+
+1. **After Function Execution**:
+    - When a function finishes executing, the `Current Execution Context` related to that function is deleted.
+    - This means it's removed from both:
+      - **Code Component** (where the code runs)
+      - **Call Stack** (which keeps track of the order in which functions are called)
+    - **Example**: Imagine you're done with a task at work. You clear your desk (delete the Execution Context) and move on to the next task.
+
+2. **After Complete Code Execution**:
+    - Once the entire JavaScript code has finished running, the `Global Execution Context` is also deleted.
+    - This means it's removed from both:
+      - **Code Component**
+      - **Call Stack**
+    - **Example**: It's like finishing all your work for the day. Once everything is done, you clean up your entire workspace (delete the Global Execution Context) before heading home.
+
+3. **Refer**:
+    - To understand this concept in more detail, refer to the folder named `4.Functions`.
 
 
 #
