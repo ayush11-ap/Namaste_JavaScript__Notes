@@ -87,7 +87,7 @@
     - To understand this concept in more detail, refer to the folder named `4.Functions`.
 
 
-## The Shortest JavaScript Program ✨
+## 5. The Shortest JavaScript Program ✨
 
 1. **What is the Shortest JavaScript Program?**:
     - An empty JavaScript file is the shortest possible JavaScript program.
