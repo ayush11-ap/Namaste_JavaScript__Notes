@@ -87,5 +87,23 @@
     - To understand this concept in more detail, refer to the folder named `4.Functions`.
 
 
+## The Shortest JavaScript Program ✨
+
+1. **What is the Shortest JavaScript Program?**:
+    - An empty JavaScript file is the shortest possible JavaScript program.
+    - **Example**: Just save a `.js` file with no content, and you've got the shortest program!
+
+2. **What Happens Behind the Scenes?** 🔍
+    - Even in an empty file, JavaScript creates a `Global Execution Context`.
+    - It sets up the memory space and creates the `window` object.
+
+3. **Global Context and `this`**:
+    - At the global level, `this === window` evaluates to `true`.
+    - **Example**: Think of `this` as a reference to the entire environment you're working in. At the global level, that environment is the `window` object, so `this` points to `window`.
+
+4. **Refer**:
+    - To understand this concept in more detail, refer to the folder named `4.Short Program`.
+
+
 #
 ➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
