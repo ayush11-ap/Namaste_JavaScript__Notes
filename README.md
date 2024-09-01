@@ -144,5 +144,52 @@
 5. **Refer**:
     - To understand this concept in more detail, refer to the folder named `6. Undefined vs Not Defined`.
 
+
+## 7. Scope Chain & Lexical Environment 🔗
+
+1. **Scope** 🌍:
+    - **Definition**: Scope refers to the area in your code where you can access specific variables and functions.
+    - **Example**:
+      ```javascript
+      function example() {
+        let x = 10;
+        console.log(x); // x is accessible here
+      }
+      console.log(x); // x is not accessible here (outside its scope)
+      ```
+
+2. **Lexical Environment** 📚:
+    - **Lexical**: Refers to something being in sequence or hierarchy.
+      - **Example**: Function `c()` is lexically inside function `a()`, meaning `c()` is nested within `a()` in the code structure.
+    - **Definition**: A Lexical Environment is the local memory of a function, along with a reference to its parent’s Lexical Environment.
+      - **Example**:
+        1. `c()` has access to its own memory space and the memory space of `a()` (its parent function).
+        2. `a()` has access to its own memory space and the global memory.
+        3. The global memory has access to its own memory space and the `window` object, but its lexical reference is `null`.
+
+3. **Scope Chain** 🔗:
+    - **Definition**: The Scope Chain is the chain of Lexical Environments, each one referring to its parent Lexical Environment, up to the global environment.
+    - **Example**:
+      ```javascript
+      function a() {
+        let x = 10;
+        function b() {
+          let y = 20;
+          function c() {
+            let z = 30;
+            console.log(x, y, z); // c() has access to its own, b()'s, and a()'s scope.
+          }
+          c();
+        }
+        b();
+      }
+      a();
+      ```
+      - In this example, function `c()` can access variables from its own Lexical Environment, as well as those from `b()` and `a()` due to the Scope Chain.
+
+4. **Refer**:
+    - To understand this concept in more detail, refer to the folder named `7. Scope Chain Lexical Environment`.
+
+
 #
 ➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
