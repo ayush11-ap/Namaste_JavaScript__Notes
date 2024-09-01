@@ -7,3 +7,5 @@ function a(){
 }
 a();
 console.log(b);
+
+// also refer the html file
