@@ -191,5 +191,48 @@
     - To understand this concept in more detail, refer to the folder named `7. Scope Chain Lexical Environment`.
 
 
+## ES6 Features: Temporal Dead Zone, `let`, `var`, `const`, and Errors 🛠️
+
+1. **`let` and `const` Declaration in Temporal Dead Zone (TDZ)** 🕒:
+    - **Hoisting**: `let` and `const` declarations are hoisted, but unlike `var`, they are not initialized immediately. Instead, they enter the **Temporal Dead Zone (TDZ)**.
+    - **Temporal Dead Zone (TDZ)**: 
+      - **Definition**: TDZ is the time since when the let variable is hoisted & till it is initialized some value the time between them is known as TDZ.
+      - The TDZ is the period between the time when a `let` or `const` variable is hoisted and when it is actually initialized with a value.
+      - **Example**:
+        ```javascript
+        console.log(x); // ReferenceError: Cannot access 'x' before initialization
+        let x = 10;
+        ```
+      - **Explanation**: Here, `x` is in the TDZ from the start of the block until the `let x = 10;` line.
+
+2. **Priority of Declarations** 🎯:
+    - **Priority**: 
+      1. `const` has the highest priority and must be initialized at the time of declaration.
+      2. `let` comes next and can be initialized later, but cannot be accessed before initialization (due to TDZ).
+      3. `var` has the lowest priority, is hoisted and initialized with `undefined`, and can be accessed before initialization.
+
+3. **Error Types in JavaScript** ⚠️:
+    - **SyntaxError**:
+      - **Definition**: Occurs when there is a mistake in the syntax of the code that prevents it from being parsed correctly.
+      - **Example**:
+        ```javascript
+        let 1x = 10; // SyntaxError: Invalid or unexpected token
+        ```
+    - **ReferenceError**:
+      - **Definition**: Occurs when trying to access a variable that is not declared or is still in the TDZ.
+      - **Example**:
+        ```javascript
+        console.log(y); // ReferenceError: y is not defined
+        ```
+    - **TypeError**:
+      - **Definition**: Occurs when a value is not of the expected type.
+      - **Example**:
+        ```javascript
+        let num = 5;
+        num.toUpperCase(); // TypeError: num.toUpperCase is not a function
+        ```
+      - **Explanation**: In this example, `num` is a number, and trying to call `toUpperCase()` (a string method) on it results in a TypeError.
+
+
 #
 ➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
