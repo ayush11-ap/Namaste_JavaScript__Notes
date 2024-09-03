@@ -191,7 +191,7 @@
     - To understand this concept in more detail, refer to the folder named `7. Scope Chain Lexical Environment`.
 
 
-## ES6 Features: Temporal Dead Zone, `let`, `var`, `const`, and Errors 🛠️
+## 8. ES6 Features: Temporal Dead Zone, `let`, `var`, `const`, and Errors 🛠️
 
 1. **`let` and `const` Declaration in Temporal Dead Zone (TDZ)** 🕒:
     - **Hoisting**: `let` and `const` declarations are hoisted, but unlike `var`, they are not initialized immediately. Instead, they enter the **Temporal Dead Zone (TDZ)**.
@@ -232,6 +232,49 @@
         num.toUpperCase(); // TypeError: num.toUpperCase is not a function
         ```
       - **Explanation**: In this example, `num` is a number, and trying to call `toUpperCase()` (a string method) on it results in a TypeError.
+
+
+## 9. Blocked Scope & Shadowing in JavaScript 🧱
+
+### 1. Block Scope `{}` 📦
+- **Definition**: A block, also known as a **Compound Statement**, is a way to group multiple JavaScript statements together, particularly where JavaScript expects only one statement.
+  - **Example**:
+    ```javascript
+    if (true) {
+        console.log('Hello');
+        console.log('World');
+    }
+    ```
+  - **Explanation**: Here, the two `console.log` statements are grouped into a block, which is executed as a single unit when the `if` condition is true.
+
+### 2. Block Scope in JavaScript 🚪
+- In JavaScript, variables declared with `let` and `const` inside a block `{}` are **block-scoped**. This means they are confined to that block and cannot be accessed outside it.
+- **Refer Folder `9. Block`**:
+  - **Example**: 
+    - Variables `b` and `c` are hoisted in their respective block spaces.
+    - Variable `a` is hoisted in the global space.
+
+### 3. Shadowing 👥
+- **Definition**: Shadowing occurs when a variable declared inside a block has the same name as a variable declared in an outer scope. The inner variable **shadows** the outer one, meaning the value inside the block takes precedence within that block.
+  - **Example**:
+    ```javascript
+    let x = 10;
+    if (true) {
+        let x = 20;
+        console.log(x); // Output: 20
+    }
+    console.log(x); // Output: 10
+    ```
+  - **Explanation**: In the example, the `x` inside the block shadows the `x` in the outer scope, but only within the block. Outside the block, the original `x` is still 10.
+
+- **Important Notes**:
+  - Shadowing is **not applicable** when using `let` and `const` if they are in the same scope. Attempting to redeclare a `let` or `const` variable within the same scope will result in a `SyntaxError`.
+  - **Lexical Scope**: Block scope also follows lexical scoping rules, meaning a block has access to its own memory space and its parent's memory space.
+  - `var` is **function-scoped**, meaning it is not confined to block scope but to the function in which it is declared.
+  - `let` and `const` are **block-scoped**, meaning they are confined to the block in which they are declared.
+
+4. **Refer**:
+    - To understand this concept in more detail, refer to the folder named `9. Block Scope Shadowing`.
 
 
 #
