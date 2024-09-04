@@ -277,5 +277,55 @@
     - To understand this concept in more detail, refer to the folder named `9. Block Scope Shadowing`.
 
 
+## 10. Closures in JavaScript 🔒
+
+### 1. What is a Closure? 🤔
+- A **closure** is created when a function is bundled together with its **lexical scope**. This means the function retains access to the variables from its outer scope, even after the outer function has finished executing.
+  - **Example**:
+    ```javascript
+    function outerFunction() {
+        let outerVariable = 'I am outside!';
+
+        function innerFunction() {
+            console.log(outerVariable);
+        }
+
+        return innerFunction;
+    }
+
+    const myClosure = outerFunction();
+    myClosure(); // Output: 'I am outside!'
+    ```
+  - **Explanation**: Here, `innerFunction` forms a closure with its surrounding `outerFunction` scope, allowing it to access `outerVariable` even after `outerFunction` has finished executing.
+
+### 2. Uses of Closures in JavaScript 🛠️
+
+1. **Module Design Pattern**:
+   - Closures are commonly used to implement the module pattern, where we can create private variables and functions that are not accessible from outside the module.
+
+2. **Currying**:
+   - Currying is a technique where a function that takes multiple arguments is transformed into a sequence of functions, each taking a single argument. Closures help in retaining access to the arguments.
+
+3. **Functions like `once`**:
+   - Closures can be used to create functions that execute only once. After the first call, subsequent calls will return the first result.
+
+4. **Memoization**:
+   - Closures are used in memoization, a technique to cache results of expensive function calls and reuse them when the same inputs occur again, improving performance.
+
+5. **Maintaining State in Asynchronous World**:
+   - Closures help in maintaining state between asynchronous operations, allowing the function to remember the state it was in when it was invoked.
+
+6. **`setTimeout` and Asynchronous Operations**:
+   - Closures are essential when using `setTimeout` or other asynchronous operations, as they allow the callback function to retain access to the variables in its outer scope even after a delay.
+
+7. **Iterators**:
+   - Closures play a role in creating iterators, which are objects that allow you to traverse through data step by step while retaining the state between iterations.
+
+8. **And Many More...**:
+   - Closures are a fundamental concept in JavaScript and are used in a wide range of scenarios, from creating private variables to implementing advanced design patterns.
+
+#### 3. **Refer**:
+    - To understand this concept in more detail, refer to the folder named `10. Closures `.
+
 #
 ➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
