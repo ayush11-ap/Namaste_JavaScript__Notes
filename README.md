@@ -327,5 +327,86 @@
 #### 3. **Refer**:
     - To understand this concept in more detail, refer to the folder named `10. Closures `.
 
+
+## 11.Function Types in JavaScript 🔄
+
+### 1. Function Statement vs Function Expression ⚖️
+
+- **Function Statement** (also known as Function Declaration):
+  - A function statement is **hoisted**, meaning it can be invoked before the function declaration appears in the code.
+  - **Example**:
+    ```javascript
+    function sayHello() {
+        console.log('Hello');
+    }
+    sayHello(); // Output: Hello
+    ```
+
+- **Function Expression**:
+  - A function expression is **not hoisted**. If you try to invoke it before its declaration, it will throw an error.
+  - **Example**:
+    ```javascript
+    var sayHello = function() {
+        console.log('Hello');
+    }
+    sayHello(); // Output: Hello
+
+    sayHello(); 
+    // Trying to invoke before the declaration would cause: 
+    // Uncaught TypeError: sayHello is not a function
+    ```
+
+### 2. Anonymous Function 🤐
+- A function **without a name** is called an anonymous function. It is often used where functions are treated as values.
+- **Example**:
+    ```javascript
+    let greet = function() {
+        console.log('Hello World');
+    };
+    greet(); // Output: Hello World
+    ```
+
+### 3. Named Function Expression 🏷️
+- A **named function expression** is a function expression where the function has a name. This name is only accessible within the function itself.
+  - **Example**:
+    ```javascript
+    var x = function xyz() {
+        console.log(xyz); // Prints the function itself
+    }
+    x();   // Works fine
+    xyz(); // Error: xyz is not defined
+    ```
+
+### 4. Parameters vs Arguments 🔄
+- **Parameters**: The variables defined when declaring a function.
+- **Arguments**: The actual values passed when invoking the function.
+  - **Example**:
+    ```javascript
+    function add(a, b) {  // a, b are parameters
+        return a + b;
+    }
+    add(2, 3);  // 2, 3 are arguments
+    ```
+
+### 5. First Class Function / First Class Citizen 🥇
+- In JavaScript, functions are **first-class citizens**. This means they can be treated like any other value, allowing them to:
+  - Be **passed** as arguments to other functions.
+  - Be **returned** from functions.
+  - Be **assigned** to variables.
+  - **Example**:
+    ```javascript
+    function greet() {
+        return function() {
+            console.log('Hello from inside!');
+        };
+    }
+    let innerGreet = greet();
+    innerGreet(); // Output: Hello from inside!
+    ```
+
+### 4. Refer:
+    - To understand this concept in more detail, refer to the folder named `11. Functions Type`.
+
+
 #
 ➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
