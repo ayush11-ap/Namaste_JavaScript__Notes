@@ -408,5 +408,116 @@
     - To understand this concept in more detail, refer to the folder named `11. Functions Type`.
 
 
+## 12. Callback Functions 🔁
+
+### 1. What is a Callback Function? 🤔
+- A **callback function** is a function that is **passed as an argument** to another function.
+- It allows the receiving function to control **when to execute** the callback function.
+- This is especially useful in asynchronous programming, where certain tasks need to happen **after** something else has finished.
+
+    **Daily Life Example**:  
+    Think of a callback as setting an alarm ⏰.  
+    - You set an alarm (callback function) for 7 AM and go to sleep.
+    - When the clock hits 7 AM, the alarm goes off (another function executes the callback).
+
+    **Code Example**:
+    ```javascript
+    function wakeUp(alarm, callback) {
+        console.log('Alarm is set at ' + alarm);
+        callback(); // Invoking the callback function
+    }
+
+    function ringAlarm() {
+        console.log('The alarm is ringing! ⏰');
+    }
+
+    wakeUp('7 AM', ringAlarm);
+    // Output: 
+    // Alarm is set at 7 AM
+    // The alarm is ringing! ⏰
+    ```
+
+### 2. The Callstack 📚
+- Everything in JavaScript is executed through the **callstack**.
+- The callstack manages function calls and executes them in a **Last In, First Out (LIFO)** order.
+- It’s also known as the **main thread of execution** because all JavaScript code is executed **synchronously** by default.
+
+    **Code Example**:
+    ```javascript
+    function firstTask() {
+        console.log('First Task');
+    }
+
+    function secondTask() {
+        console.log('Second Task');
+    }
+
+    firstTask();
+    secondTask();
+    
+    // Output:
+    // First Task
+    // Second Task
+    ```
+
+### 3. Blocking the Callstack 🚨
+- **Blocking the callstack** means stopping other code from running until a long-running function finishes execution.
+- This can happen if a function takes too much time to execute (e.g., 25-30 seconds). While it's running, **no other code** can execute, which causes the browser to **freeze** or become **unresponsive**.
+- This is known as **blocking the main thread**.
+
+    **Daily Life Example**:  
+    Imagine waiting in line at a coffee shop ☕, but the person ahead of you is taking forever to order! Until they finish, you can't place your order (callstack is blocked).
+
+    **How to Avoid Blocking**: Use **asynchronous operations** such as `setTimeout`, **Promises**, or `async/await` to allow other code to run without waiting for the slow task to finish.
+
+    **Code Example**:
+    ```javascript
+    function longTask() {
+        // Simulating a task that takes 5 seconds to complete
+        let startTime = Date.now();
+        while (Date.now() - startTime < 5000) {
+            // Task runs for 5 seconds
+        }
+        console.log('Task Complete!');
+    }
+
+    console.log('Start');
+    longTask(); // Blocks the callstack for 5 seconds
+    console.log('End');
+
+    // Output:
+    // Start
+    // Task Complete!
+    // End
+    ```
+
+    In this example, the callstack is blocked for 5 seconds, preventing the code after `longTask()` from executing.
+
+### 4. Asynchronous Callbacks 🚀
+- To avoid blocking the callstack, we can use asynchronous callbacks, allowing other code to run while waiting for a task to complete.
+- Example of using `setTimeout` to execute a task **after a delay** without blocking the callstack:
+
+    ```javascript
+    console.log('Start');
+
+    setTimeout(() => {
+        console.log('Task Complete after 3 seconds!');
+    }, 3000); // Task runs after 3 seconds, but other code can execute in the meantime
+
+    console.log('End');
+
+    // Output:
+    // Start
+    // End
+    // Task Complete after 3 seconds!
+    ```
+
+    Here, `setTimeout` is an example of a **non-blocking operation**, allowing other code (`console.log('End')`) to run while waiting for 3 seconds.
+
+---
+
+**Refer folder 12. Callback Functions**
+
+
 #
 ➡️ <font color="red"><i>Remaining notes will be uploaded every day.</i></font>
